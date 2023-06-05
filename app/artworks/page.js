@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { artworks } from '../../database/artworks';
 
+console.log(artworks);
+
 export const metadata = {
   title: 'My Artworks',
   description:
@@ -15,12 +17,15 @@ export default function Artworks() {
       {artworks.map((artwork) => {
         return (
           <div key={`artwork-div-${artwork.id}`}>
-            <Link href={`/artworks/${artwork.title}`}>{artwork.title}</Link>
+            <Link href={`/artworks/${artwork.id}`}>
+              <h2>{artwork.title}</h2>
+            </Link>
             <br />
             <Image
-              src={`/images/${artwork.title}.png`}
-              width={246}
-              height={246}
+              style={{ width: 'auto', height: 'auto' }}
+              src={`/artworks/${artwork.title}.png`}
+              width={360}
+              height={360}
             />
           </div>
         );

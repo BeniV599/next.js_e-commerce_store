@@ -3,9 +3,10 @@
 ::after {
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 body {
-  background-color: #6100bb;
+  background-color: #11001a;
 
   h1 {
     padding: 24px;
@@ -13,34 +14,48 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    color: #eeff00;
+    color: #7884a7;
   }
-  .not-found {
+  h2 {
+    font-size: 2rem;
+    &:hover {
+      color: #8500cc;
+    }
+  }
+
+  .not-found,
+  .error {
     padding-top: 2em;
     margin: auto;
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     font-size: 4rem;
-    font-weight: 800;
-    color: #ff0080;
+    font-weight: 500;
+    color: #b02ef1;
+    .error404 {
+      color: #990000;
+      text-decoration: underline;
+    }
   }
+
   .link {
-    background-color: #75ce00;
-    padding: 18px;
+    background-color: #420066;
+    padding: 1rem;
     font-size: 1rem;
     font-weight: 700;
+    gap: 15rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     a {
       margin: 0 48px;
-      text-decoration: none;
-      color: #7a007a;
+      color: #fff131;
       &:hover {
-        color: #fbff00;
+        color: #ecdd00;
       }
     }
   }
