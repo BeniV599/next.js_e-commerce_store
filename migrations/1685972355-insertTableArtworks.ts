@@ -1,7 +1,6 @@
 import { Sql } from 'postgres';
-import { artworks } from '../database/artworks';
 
-/*export const artworks = [
+export const artworks = [
   { id: 1, title: 'Something, Sometime, Somewhere', price: 369 },
   { id: 2, title: 'Anything That Is Not Unoriginal', price: 420 },
   { id: 3, title: 'Embracing The Uniqueness', price: 711 },
@@ -9,7 +8,7 @@ import { artworks } from '../database/artworks';
   { id: 5, title: 'Exploring New Territories', price: 1472 },
   { id: 6, title: 'Authentic Aesthetics', price: 1994 },
   { id: 7, title: 'Storming Inside The Storm', price: 2023 },
-];*/
+];
 
 export async function up(sql: Sql) {
   for (const artwork of artworks) {

@@ -1,25 +1,6 @@
 import { cache } from 'react';
+import { Artwork } from '../migrations/1685972173-createTableArtworks';
 import { sql } from './connect';
-
-export const artworks = [
-  { id: 1, title: 'Something, Sometime, Somewhere', price: 369 },
-  { id: 2, title: 'Anything That Is Not Unoriginal', price: 420 },
-  { id: 3, title: 'Embracing The Uniqueness', price: 711 },
-  { id: 4, title: 'Seeing Beauty, Beyond Colors', price: 1234 },
-  { id: 5, title: 'Exploring New Territories', price: 1472 },
-  { id: 6, title: 'Authentic Aesthetics', price: 1994 },
-  { id: 7, title: 'Storming Inside The Storm', price: 2023 },
-];
-
-export function getAllArtworks() {
-  return artworks;
-}
-export const getArtworks = cache(async () => {
-  const artworks = await sql<Artwork[]>`
-    SELECT * FROM artworks
- `;
-  return artworks;
-});
 
 export const getArtworkById = cache(async (id: number) => {
   const [artwork] = await sql<Artwork[]>`
@@ -42,5 +23,32 @@ export const createArtwork = cache(async (title: string, price: number) => {
       RETURNING *
     `;
 
+  return artwork;
+});
+
+export const updateArworkById = cache(
+  async (id: number, title: string, price: number) => {
+    const [artwork] = await sql<Artwork[]>`
+      UPDATE artworks
+      SET
+        title = ${title},
+        price = ${price},
+      WHERE
+        id = ${id}
+        RETURNING *
+    `;
+
+    return artwork;
+  },
+);
+
+export const deleteAnimalById = cache(async (id: number) => {
+  const [artwork] = await sql<Artwork[]>`
+    DELETE FROM
+      artworks
+    WHERE
+      id = ${id}
+    RETURNING *
+  `;
   return artwork;
 });

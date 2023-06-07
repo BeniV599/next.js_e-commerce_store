@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { artworks } from '../../../database/artworks';
+import { artwork } from '../../../database/artworks';
 
 export const dynamic = 'force-dynamic';
 

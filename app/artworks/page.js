@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { artworks } from '../../database/artworks';
+import { getArtworks } from '../../database/artworks';
 
-console.log(artworks);
+console.log(getArtworks);
 
 export const metadata = {
   title: 'My Artworks',
@@ -10,7 +10,8 @@ export const metadata = {
     "This is where you'll see some of my work here. Feel free to take a peek & hopefully you'll be surprised of what you'll seek. :)",
 };
 
-export default function Artworks() {
+export default async function Artworks() {
+  const artworks = await getArtworks();
   return (
     <main>
       <h1>So,... anyone seeing anything peculiar in particular? :D</h1>
