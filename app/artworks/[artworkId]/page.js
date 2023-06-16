@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { artwork } from '../../../database/artworks';
+import { getArtworkById } from '../../../database/artworks';
 
 export const dynamic = 'force-dynamic';
 
-export default function Artwork({ params }) {
-  const myArtwork = artworks.find(
-    (artwork) => artwork.id === Number(params.artworkId),
-  );
-  console.log(myArtwork);
+export default async function Artwork({ params }) {
+  const myArtwork = await getArtworkById(params.artworkId);
+
+  console.log(params);
+
   if (!myArtwork) {
     notFound();
   }
@@ -22,6 +22,7 @@ export default function Artwork({ params }) {
         height={840}
       />
       <p style={{ color: '#ecdd00', fontSize: '2rem' }}>€{myArtwork.price},-</p>
+
       <h2 style={{ color: '#7884a7', marginTop: '24px' }}>
         Well, look at this beautiful piece of art called {myArtwork.title}! ;p
       </h2>

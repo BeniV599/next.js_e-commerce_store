@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 body {
-  background-color: #11001a;
+  background-color: #020003;
 
   h1 {
     padding: 24px;
@@ -14,12 +14,13 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    color: #7884a7;
+    color: #c4755a;
   }
   h2 {
     font-size: 2rem;
+    color: #7e7383;
     &:hover {
-      color: #8500cc;
+      color: #b9a4c5;
     }
   }
 
@@ -34,15 +35,15 @@ body {
     justify-content: center;
     font-size: 4rem;
     font-weight: 500;
-    color: #b02ef1;
+    color: #500035;
     .error404 {
-      color: #990000;
+      color: #500000;
       text-decoration: underline;
     }
   }
 
   .link {
-    background-color: #420066;
+    background-color: #402734;
     padding: 1rem;
     font-size: 1rem;
     font-weight: 700;
@@ -53,9 +54,9 @@ body {
     position: relative;
     a {
       margin: 0 48px;
-      color: #fff131;
+      color: #efb15d;
       &:hover {
-        color: #ecdd00;
+        color: #f9f871;
       }
     }
   }

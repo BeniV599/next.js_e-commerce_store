@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <header data-test-id="products-link"></header>
         <nav className="link">
           <Link href="/">My Homepage</Link>{' '}
           <Link href="/artworks">My Artworks</Link>
